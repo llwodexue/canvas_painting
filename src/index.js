@@ -31,8 +31,22 @@
         canvas.width = document.documentElement.clientWidth;
         canvas.height = document.documentElement.clientHeight;
     }
-    // 画线
+    // 手绘线
+    function drawLines(x1, y1, x2, y2) {
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+        ctx.closePath();
+    }
+    // 画直线
     function drawLine(x1, y1, x2, y2) {
+        let w = canvas.offsetWidth;
+        let h = canvas.offsetHeight;
+        ctx.clearRect(0, 0, w, h);
+        if (imageData) {
+            ctx.putImageData(imageData, 0, 0, 0, 0, w, h);
+        }
         ctx.beginPath();
         ctx.moveTo(x1, y1);
         ctx.lineTo(x2, y2);
@@ -138,8 +152,15 @@
                         e.touches[0].pageX - last.x,
                         e.touches[0].pageY - last.y
                     );
-                } else {
+                } else if (type == "line") {
                     drawLine(
+                        last.x,
+                        last.y,
+                        e.touches[0].pageX,
+                        e.touches[0].pageY
+                    );
+                } else {
+                    drawLines(
                         last.x,
                         last.y,
                         e.touches[0].clientX,
@@ -176,8 +197,10 @@
                         e.pageX - last.x,
                         e.pageY - last.y
                     );
+                } else if (type == "line") {
+                    drawLine(last.x, last.y, e.pageX, e.pageY);
                 } else {
-                    drawLine(last.x, last.y, e.clientX, e.clientY);
+                    drawLines(last.x, last.y, e.clientX, e.clientY);
                     last.x = e.clientX;
                     last.y = e.clientY;
                 }

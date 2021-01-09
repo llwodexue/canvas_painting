@@ -21,13 +21,13 @@ ul {
 }
 #actions .icon {
     font-size: 1.8em;
-    margin: 0.5em;
+    margin: 0.3em;
 }
 #actions div {
     display: flex;
 }
 #actions #resetSave{
-    margin-left: 3rem;
+    margin-left: 2rem;
 }
 #actions .icon.active {
     color: red;
