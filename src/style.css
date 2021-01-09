@@ -10,6 +10,7 @@ ul {
     position: fixed;
     top: 0;
     left: 0;
+    background: #cbecb9;
 }
 #actions {
     position: fixed;
@@ -25,8 +26,12 @@ ul {
 #actions div {
     display: flex;
 }
+#actions #resetSave{
+    margin-left: 3rem;
+}
 #actions .icon.active {
     color: red;
+    transform: scale(1.2);
 }
 #color {
     position: fixed;
@@ -40,28 +45,33 @@ ul {
 }
 #color ul li {
     border-radius: 50%;
-    width: 1.4em;
-    height: 1.4em;
+    width: 1.2em;
+    height: 1.2em;
     margin: 0.5em;
 }
 #color ul li.black {
-    background: black;
+    border: 2px solid #101010;
+    background: #2d2d2d;
 }
 #color ul li.red {
+    border: 1px solid #ca0001;
     background: red;
 }
 #color ul li.green {
+    border: 2px solid #0d5600;
     background: green;
 }
 #color ul li.yellow {
+    border: 2px solid #c7c500;
     background: yellow;
 }
 #color ul li.blue {
+    border: 1px solid #001ba5;
     background: blue;
 }
 #color ul li.active {
-    box-shadow: 0em 0em 0.5em 0.1em rgba(0, 0, 0, 0.3);
-    transform: scale(1.2);
+    box-shadow: 0 3px 6px rgba(0,0,0,.3);
+    transform: scale(1.3);
 }
 #degree {
     position: fixed;
@@ -80,7 +90,8 @@ ul {
     transition: all 0.3s;
 }
 #degree ul li.active {
-    box-shadow: 0em 0em 0.5em 0.2em rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 6px rgba(0,0,0,.3);
+    transform: scale(1.2);
 }
 #degree ul li.thin {
     height: 0.2rem;

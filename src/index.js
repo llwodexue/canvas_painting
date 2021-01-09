@@ -2,7 +2,7 @@
     let canvas = document.getElementById("canvas");
     let ctx = canvas.getContext("2d");
     let using = false; // 是否按下
-    let type = "pen";
+    let type = "pen"; // 默认类型为pen
     let imageData = null; // 存储之前的图像
     let last = { x: null, y: null };
     let isTouchDevice = "ontouchstart" in document.documentElement; // 判断是否是移动端设备，也可以用正则匹配 navigator.userAgent
@@ -11,6 +11,16 @@
     ctx.strokeStyle = "black";
     ctx.lineCap = "round";
     ctx.lineJoin = "round";
+    ctx.fillStyle = "white";
+    // 禁止页面滚动
+    document.body.addEventListener(
+        "touchmove",
+        function (e) {
+            e.preventDefault();
+        },
+        { passive: false } //防止页面卡顿
+    );
+    // 全屏显示
     function resize() {
         setSize();
         window.onresize = function () {
@@ -21,6 +31,7 @@
         canvas.width = document.documentElement.clientWidth;
         canvas.height = document.documentElement.clientHeight;
     }
+    // 画线
     function drawLine(x1, y1, x2, y2) {
         ctx.beginPath();
         ctx.moveTo(x1, y1);
@@ -28,6 +39,7 @@
         ctx.stroke();
         ctx.closePath();
     }
+    // 画矩形
     function drawRect(x1, y1, x2, y2) {
         let w = canvas.offsetWidth;
         let h = canvas.offsetHeight;
@@ -88,15 +100,19 @@
             type = target.id;
         }
     };
+    // 清除画板
     clear.onclick = (e) => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     };
-    download.onclick = function () {
+    // 下载图片
+    download.onclick = () => {
         let url = canvas.toDataURL();
         let a = document.createElement("a");
-        a.download = "painting.png";
+        a.download = "painting.jpg";
         a.href = url;
+        a.target = "_blank";
         a.click();
+        a.remove();
     };
     // 判断是移动设备还是PC
     if (isTouchDevice) {

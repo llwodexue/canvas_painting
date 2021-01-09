@@ -1,5 +1,9 @@
-# Canvas在线画板
+# Canvas画板
 
-用鼠标就可以绘画
+鼠标/手移动即可绘图
 
-预览地址：
+- 支持功能：画线、画矩形、橡皮擦、清空画板、下载图片
+- 适配移动端和PC端
+
+预览地址：[https://llwodexue.github.io/canvas_painting/](https://llwodexue.github.io/canvas_painting/)
+
