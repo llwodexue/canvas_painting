@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+ul {
+    list-style: none;
+}
+#canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#actions {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+#actions .icon {
+    font-size: 1.8em;
+    margin: 0.5em;
+}
+#actions div {
+    display: flex;
+}
+#actions .icon.active {
+    color: red;
+}
+#color {
+    position: fixed;
+    top: 3.5em;
+    left: 0.5em;
+}
+#color ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#color ul li {
+    border-radius: 50%;
+    width: 1.4em;
+    height: 1.4em;
+    margin: 0.5em;
+}
+#color ul li.black {
+    background: black;
+}
+#color ul li.red {
+    background: red;
+}
+#color ul li.green {
+    background: green;
+}
+#color ul li.yellow {
+    background: yellow;
+}
+#color ul li.blue {
+    background: blue;
+}
+#color ul li.active {
+    box-shadow: 0em 0em 0.5em 0.1em rgba(0, 0, 0, 0.3);
+    transform: scale(1.2);
+}
+#degree {
+    position: fixed;
+    top: 17em;
+    left: 0.5em;
+}
+#degree ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#degree ul li {
+    width: 1.4em;
+    margin: 0.8rem 0.5em;
+    background: black;
+    transition: all 0.3s;
+}
+#degree ul li.active {
+    box-shadow: 0em 0em 0.5em 0.2em rgba(0, 0, 0, 0.3);
+}
+#degree ul li.thin {
+    height: 0.2rem;
+}
+#degree ul li.middle {
+    height: 0.4rem;
+}
+#degree ul li.thick {
+    height: 0.6rem;
+}

@@ -4,14 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>画板</title>
-    <link rel="stylesheet" href="style.css">
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas在线画板</title>
+    <link rel="shortcut icon" href="./src/favicon-32x32-next.png" type="image/x-icon">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/iconfont.css">
 </head>
 
 <body>
     <canvas id="canvas"></canvas>
-    <script src="index.js"></script>
+    <div id="actions">
+        <div id="tool">
+            <i class="icon pen active" id="pen"></i>
+            <i class="icon rectangle" id="rectangle"></i>
+            <b class="icon eraser" id="eraser"></b>
+        </div>
+        <div id="resetSave">
+            <i class="icon clear" id="clear"></i>
+            <i class="icon download" id="download"></i>
+        </div>
+    </div>
+    <div id="color">
+        <ul>
+            <li class="black active" id="black"></li>
+            <li class="red" id="red"></li>
+            <li class="yellow" id="yellow"></li>
+            <li class="green" id="green"></li>
+            <li class="blue" id="blue"></li>
+        </ul>
+    </div>
+    <div id="degree">
+        <ul>
+            <li class="thin active" id="thin"></li>
+            <li class="middle" id="middle"></li>
+            <li class="thick" id="thick"></li>
+        </ul>
+    </div>
+    <script src="./src/index.js"></script>
 </body>
 
 </html>
