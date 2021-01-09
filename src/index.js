@@ -103,6 +103,7 @@
     // 清除画板
     clear.onclick = (e) => {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        imageData = null;
     };
     // 下载图片
     download.onclick = () => {
